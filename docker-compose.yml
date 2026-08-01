@@ -2,6 +2,8 @@ services:
 
   # jupyter notebook
   jupyter:
+    build:
+      context: .
     container_name: jupyter
     ports: 
       - "8888:8888"
