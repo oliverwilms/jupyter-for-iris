@@ -1,0 +1,14 @@
+services:
+
+  # jupyter notebook
+  jupyter:
+    container_name: jupyter
+    ports: 
+      - "8888:8888"
+    environment: 
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_ALLOW_INSECURE_WRITES=true
+    volumes: 
+      - .:/home/jovyan
+      - ./data:/app/data
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''" 
